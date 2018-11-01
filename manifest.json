@@ -1,0 +1,15 @@
+{
+  "browser_action": {
+    "default_title": "UTab"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "manifest_version": 2,
+  "name": "Utab",
+  "offline_enabled": true,
+  "optional_permissions": ["bookmarks", "topSites", "chrome://favicon/"],
+  "permissions": ["unlimitedStorage", "*://*.yahooapis.com/*"],
+  "version": "1.0"
+}

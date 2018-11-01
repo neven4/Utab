@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Utab</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="main-content">
+
+            <div class="header">
+                <div class="left">
+                    <a href="https://mail.google.com/mail/?authuser=0" class="email" title="Gmail"><img src="./img/mail.png"
+                            alt="Email"></a>
+                    <!-- <div class="chrome_tab"><a href=""><img src="./img/chrome.png" alt="chrome_tab" title="Standart Chrome Tab"></a></div> -->
+                    <div class="search" title='Search'> <label for="google_search"><img src="./img/search.png" alt="search"></label>
+                        <input type="text" id='google_search'></div>
+                </div>
+                <div class="right">
+                    <div class="weather">
+                        <div class="weather_small">
+                            <div class="temperature"></div>
+                            <div class="geolocation"></div>
+                        </div>
+                        <div class="weather_tab">
+                            <div class="add">
+                                <div class="geolocation"></div>
+                                <span class="weekDay"></span>
+                                <a class="add_geo"><img src="./img/pen.png" alt=""></a>
+
+                            </div>
+                            <div class="condition"></div>
+                            <div class="temperature"></div>
+                            <div class="days">
+
+                                <div class="day">
+                                    <div class="day_of_week"></div>
+                                    <span class="day_temp"></span><span class="night_temp"></span>
+                                </div>
+                                <div class="day">
+                                    <div class="day_of_week"></div>
+                                    <span class="day_temp"></span><span class="night_temp"></span>
+                                </div>
+                                <div class="day">
+                                    <div class="day_of_week"></div>
+                                    <span class="day_temp"></span><span class="night_temp"></span>
+                                </div>
+                                <div class="day">
+                                    <div class="day_of_week"></div>
+                                    <span class="day_temp"></span><span class="night_temp"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="time"></div>
+            <div class='greeting'>Good <span class="period"></span>, <span class="name" title="Double click to change name"></span>.</div>
+
+            <div class="quote">
+                <div class="text"></div>
+                <div class="hidden">
+                    <div class="author"></div>
+                    <a href="" class="twit" target="_blank" title='Tweet quote'> <img src="./img/twit.png" alt="twitter"></a>
+                    <!-- <div class="reload reload_qoute"><img src="./refresh-button.png" alt="reload_quote"></div> -->
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="left">
+                    <div class="settings">
+                        <div class="sett_icon">
+
+                            <img src="./img/set.png" alt="set_icon" class='icon-img'>
+
+                        </div>
+                        <div class="settings-tab">
+                            <div class="tab-right">
+                                <h3>General settings</h3>
+                                <div class="img_category">
+                                    <label for="choose_category">Choose your own category of photo:</label>
+                                    <input type="text" id='choose_category'>
+                                </div>
+                                <ul class="settings_btns">
+
+                                    <li><label for='quote'>Quote</label><input type="checkbox" checked class="switch"
+                                            data-id="quote"></li>
+                                    <li><label for='todo'>ToDo</label><input type="checkbox" checked class="switch"
+                                            data-id="todo"></li>
+                                    <li><label for='weather'>Weather</label><input type="checkbox" checked class="switch"
+                                            data-id="weather"></li>
+                                    <li><label for='search'>Search</label><input type="checkbox" checked class="switch"
+                                            data-id="search"></li>
+                                    <!-- <li><label for='bar'>Bar</label><input type="checkbox" class="switch" data-id="bar"></li> -->
+                                    <li><label for='clock'>Clock</label><input type="checkbox" checked class="switch"
+                                            data-id="time"></li>
+                                    <li><span class="left_category">Category</span><span class="right_category">Wallpaper</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about_img">
+                        <div class="visible">
+                            <div class="location"></div>
+                            <div class="reload reload_img" title="Another photo"><img src="./img/refresh.png" alt="reload_img"></div>
+                        </div>
+                        <div class="img_author"><a href="" target="_blank" class="author_from_api" title='Link to author'></a></div>
+                    </div>
+
+                </div>
+
+                <div class="todo">
+                    <div class="todo_btn" title='Todo List'>ToDo</div>
+                    <div class="todo-tab">
+                        <input type="text" placeholder="Add New ToDo" class="todo_input">
+                        <ul class="todo_list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,743 @@
+@import url("./weather-icons.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+
+  height: 100%;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: 0;
+  font-family: sans-serif;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  color: white;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.time {
+  font-size: 160px;
+  font-weight: 400;
+  margin: 0;
+  cursor: context-menu;
+  user-select: none;
+  letter-spacing: -3px;
+}
+
+.greeting {
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  cursor: context-menu;
+  user-select: none;
+}
+
+.enter_user-name {
+  border: none;
+  background: 0;
+  border-bottom: 2px solid white;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  outline: none;
+  width: 15em;
+  color: white;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 25px;
+  padding: 20px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header .left {
+  flex: 1 0 auto;
+  text-align-last: left;
+  display: flex;
+}
+
+.header .right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.email {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.email:hover {
+  opacity: 0.9;
+}
+
+.email img {
+  height: 24px;
+  width: 24px;
+}
+
+.chrome_tab {
+  margin-left: 15px;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  height: 20px;
+  width: 20px;
+}
+
+.chrome_tab:hover {
+  opacity: 0.9;
+}
+
+.chrome_tab img {
+  height: 20px;
+  width: 20px;
+}
+
+.search {
+  margin-left: 15px;
+  display: flex;
+}
+
+.search label {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.search label:hover {
+  opacity: 0.9;
+}
+
+.search label img {
+  height: 20px;
+  width: 20px;
+}
+
+#google_search {
+  width: 200px;
+  background: 0;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+  align-self: center;
+  padding: 3px 3px 5px 3px;
+}
+
+#google_search:focus .search label {
+  opacity: 0.9;
+}
+
+#google_search:focus {
+  border-bottom: 2px solid #fff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+}
+
+.footer .left {
+  flex: 1 0 auto;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Settings */
+
+.sett_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sett_icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+.sett_icon:hover img {
+  opacity: 0.8;
+}
+
+.settings-tab {
+  position: absolute;
+  display: none;
+  bottom: 70px;
+  left: 20px;
+  width: 520px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.95);
+  border-radius: 5px;
+  z-index: 500;
+  margin-bottom: -10px;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.show {
+  display: flex;
+  margin-bottom: 0;
+  opacity: 1;
+}
+
+.tab-right {
+  padding: 25px 30px;
+}
+
+.tab-right h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.tab-right .img_category {
+  margin-top: 30px;
+}
+
+.img_category label {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.img_category label:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+#choose_category {
+  border: none;
+  background: 0;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.left_category,
+.right_category {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.left_category:hover,
+.right_category:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.right_category {
+  float: right;
+}
+
+.tab-right ul {
+  padding: 0;
+  margin: 20px 0 25px 0;
+}
+
+.tab-right ul li {
+  list-style: none;
+  padding: 12px 0;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  display: inline-block;
+}
+
+.tab-right ul li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab-right ul label {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.tab-right ul label:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* settings switch btns */
+
+.switch {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3em;
+  height: 1.5em;
+  background: rgba(187, 187, 187, 0.6);
+  border-radius: 3em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  margin-left: auto;
+  position: relative;
+  float: right;
+}
+
+.switch:hover {
+  background: rgba(187, 187, 187, 0.8);
+}
+
+.switch:checked {
+  background-color: rgb(76, 217, 100);
+}
+
+.switch:after {
+  position: absolute;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.3);
+  transform: scale(0.7);
+  left: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.switch:checked:after {
+  left: calc(100% - 1.5em);
+}
+
+/* about Image */
+
+.footer .left .about_img {
+  margin-left: 20px;
+  position: relative;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.footer .left .about_img:hover .img_author {
+  opacity: 1;
+  transform: translateY(40%);
+}
+
+.footer .left .about_img:hover .visible {
+  transform: translateY(-40%);
+  opacity: 1;
+}
+
+.footer .left .about_img:hover .visible .location {
+  opacity: 0.9;
+}
+
+.footer .left .about_img .visible {
+  transition: all 0.3s ease;
+  display: flex;
+}
+
+.reload {
+  height: 14px;
+  width: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.reload:hover {
+  opacity: 1;
+}
+
+.reload img {
+  height: 14px;
+  width: 14px;
+}
+
+.footer .left .about_img .location {
+  font-size: 13px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.footer .left .about_img .img_author {
+  margin-top: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.footer .left .about_img .img_author a {
+  font-size: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.footer .left .about_img .img_author:hover a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer .todo {
+  text-align: right;
+}
+
+/* Change name */
+
+.whatName {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whatName h1 {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.whatName .enter_user-name {
+  margin-top: 40px;
+}
+
+/* Quote */
+
+.quote {
+  width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.quote:hover .hidden {
+  transform: scale(1);
+  margin-top: 10px;
+}
+
+.quote .hidden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  margin-top: -16px;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  transform: scale(0);
+}
+
+.quote .hidden .author {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.quote .hidden .twit {
+  height: 14px;
+  width: 14px;
+  margin-left: 7px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.quote .hidden .twit img {
+  height: 16px;
+  width: 16px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.quote .hidden .twit:hover img {
+  opacity: 1;
+}
+
+.quote .text {
+  text-align: center;
+  font-size: 16px;
+  transition: all 0.4s ease;
+}
+
+.change_name {
+  border: none;
+  background: 0;
+  outline: none;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+/* Todo */
+
+.todo_btn {
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo_btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.todo-tab {
+  width: 300px;
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 500;
+  margin-bottom: -10px;
+  transition: all 0.4s ease;
+}
+
+.todo-tab ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-tab li {
+  text-decoration: none;
+  line-height: 35px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+
+.todo-tab span {
+  width: 0;
+  height: 35px;
+  background-color: #e74d3cbd;
+  margin: 0 10px 0 0;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  opacity: 0;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+
+.todo-tab span img {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  opacity: 0;
+}
+
+.todo-tab li:hover span {
+  width: 35px;
+  opacity: 1;
+}
+
+.todo-tab li:hover span img {
+  opacity: 1;
+}
+
+.todo-tab li:nth-child(2n) {
+  background-color: rgba(61, 61, 61, 0.2);
+}
+
+.todo-tab input {
+  width: 100%;
+  font-size: 24px;
+  line-height: 24px;
+  border: none;
+  padding: 5px 5px 5px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(107, 105, 105, 0.281);
+  outline: none;
+  border: 3px solid rgba(0, 0, 0, 0);
+}
+
+.todo-tab input:focus {
+  border: 3px solid rgba(255, 255, 255, 0.85);
+}
+
+.todo-tab .done {
+  color: grey;
+  text-decoration: line-through;
+}
+
+/* Weather */
+
+.weather_small {
+  cursor: pointer;
+  user-select: none;
+}
+
+.weather_small .temperature {
+  font-size: 26px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+
+.weather_small .geolocation {
+  font-size: 13px;
+  text-align: right;
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.weather_tab {
+  width: 350px;
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 500;
+  transition: all 0.4s ease;
+  padding: 10px 15px 5px 15px;
+  border-radius: 5px;
+}
+
+.weather_tab .add {
+  display: flex;
+}
+
+.weather_tab .geolocation {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #fff;
+}
+
+.condition {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.add_geo {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.add_geo:hover img {
+  opacity: 1;
+}
+
+.add_geo img {
+  height: 12px;
+  width: 12px;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.enter_geo {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+}
+
+.weather_tab .temperature {
+  font-size: 60px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: default;
+}
+
+.days {
+  display: flex;
+  font-size: 12px;
+  padding-top: 5px;
+  margin-top: 5px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.day {
+  padding: 5px;
+  margin: 3px;
+  width: 100px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.day:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.day_of_week {
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.day_temp {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.night_temp {
+  margin-left: 3px;
+}
+
+.show2 {
+  display: block;
+}
+
+.weekDay {
+  font-size: 16px;
+  margin-left: 7px;
+  font-weight: 300;
+  align-self: center;
+  display: none;
+  margin: 0 10px;
+}
+
+.low_temp {
+  font-size: 40px;
+  color: rgb(99, 99, 99);
+  font-weight: 400;
+  margin-left: 7px;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
